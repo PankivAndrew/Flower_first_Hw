@@ -67,11 +67,11 @@ public class FlowerBucket {
         return tmpPart;
     }
 
-    public ArrayList<Flower> getFlower(String type){
+    public ArrayList<Flower> getFlower(FlowerSpec type){
 
         ArrayList<Flower> tmp = new ArrayList<Flower>();
         for (int i = 0; i < insertIndex; i++) {
-            if (a[i].getType().equals(type)) {
+            if (a[i].getType().equals(type.getType())) {
                 tmp.add(a[i]);
             }
         }
@@ -79,13 +79,13 @@ public class FlowerBucket {
         return tmp;
     }
 
-    public Flower searchFlower(Flower flower){
+    public Flower searchFlower(FlowerSpec flower){
 
         ArrayList<FlowerSpec> tmp = new ArrayList<FlowerSpec>();
         for (int i = 0; i < insertIndex; i++) {
             if (a[i].getType() != flower.getType())
                 continue;
-            if (a[i].getColor() != flower.getColor())
+            if (a[i].getColor() != flower.getColour())
                 continue;
             if (a[i].getLength() != flower.getLength())
                 continue;

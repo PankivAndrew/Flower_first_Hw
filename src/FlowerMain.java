@@ -1,3 +1,4 @@
+import com.sun.org.apache.xpath.internal.SourceTree;
 
 public class FlowerMain {
 
@@ -6,11 +7,12 @@ public class FlowerMain {
         Flower mak = new Flower(FlowerColour.GREEN, 12, true, 12.5, FlowerType.MAK);
         Flower romashka = new Flower(FlowerColour.BLACK, 12, true, 12.5, FlowerType.ROMASHKA);
 
-        Flower findFlower = new Flower(FlowerColour.BLACK, 12, true, 10, FlowerType.ROMASHKA);
+        FlowerSpec findFlower = new FlowerSpec(FlowerColour.BLACK, 12, FlowerType.ROMASHKA);
 
         bucket.addFlower(mak);
         bucket.addFlower(romashka);
 
+        System.out.println(bucket.getFlower(findFlower));
         System.out.println(bucket.searchFlower(findFlower));
 
     }
